@@ -1,0 +1,305 @@
+   Selvan Studies
+
+     #include <stdio.h>
+
+void printArray(int arr[],int n){
+    int i;
+    for ( i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void insertionSort(int arr[],int n){
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        if(i==3){
+            printArray(arr,n);
+        }
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+int main()
+{   
+    int n,i;
+    scanf("%d",&n);
+    int arr[n];
+    for (i = 0; i < n; i++) {
+        scanf("%d",&arr[i]);
+    }
+    insertionSort(arr, n);
+    printArray(arr,n);
+	return 0;
+}
+
+
+IN india 
+   
+       #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;cin>>t;
+    while(t--){
+        int n,tot,now=0;cin>>n>>tot;
+        std::vector<int>v(n);
+        for (int i = 0; i < n; i++) {
+            cin>>v[i];
+        }
+        sort(v.begin(),v.end());
+        for (int i = 0; i < n; i++) {
+            now+=v[i];
+            if(now>tot){
+                cout<<i<<endl;
+                break;
+            }
+        }
+    }
+	return 0;
+	printf("void heapsort(int x[],int n)void makeheap(int x[],int n)heapsort(a,n); makeheap(a,n);");
+}
+
+
+
+
+One of the biggest MNC 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,temp;cin>>n;
+    map<int,int> mp;
+    for (int i = 0; i < n; i++) {
+        cin>>temp;
+        mp[temp]++;
+    }
+    int curr,mx=0;
+    for(auto pr:mp){
+        curr = mp.find(pr.first+1)==mp.end()?0:mp[pr.first+1];
+        mx = max(mx,pr.second+curr);
+    }
+    cout<<mx;
+	return 0;
+	printf("void insertionSort(int *p,int n)arr=(int *)malloc(n*sizeof(int));insertionSort(arr,n);");
+}
+
+
+
+Tina owns a match making company 
+
+
+     #include <bits/stdc++.h>
+using namespace std;
+void fun()
+{
+    int n;cin>>n;
+    vector<int>a(n),b(n) ;
+    for(int i = 0;i<n;i++)
+        cin>>a[i];
+    for (int i = 0; i < n; i++)
+        cin>>b[i];
+    sort(a.begin(),a.end());sort(b.begin(),b.end());
+	int ans = 0;
+	for (int i = 0; i < n; i++) {
+	    if(a[i]%b[n-1-i]==0||b[n-1-i]%a[i]==0)
+	        ans++;
+	}
+	cout<<ans<<endl;
+}
+int main(){
+    int t;cin>>t;
+    while(t--) fun();
+    return 0;
+}
+
+
+
+
+      lets call a integer 
+
+
+
+     #include <stdio.h>
+
+#define N	200000
+#define MD	1000000007
+
+int min(int a, int b) { return a < b ? a : b; }
+int max(int a, int b) { return a > b ? a : b; }
+
+int vv[N + 1], ff[N + 1], gg[N + 1];
+
+void init() {
+	int i;
+
+	ff[0] = gg[0] = 1;
+	for(i = 1;i <= N;i++) {
+		vv[i] = i == 1 ? 1 : (long long) vv[i - MD % i] * (MD / i + 1) % MD;
+		ff[i] = (long long) ff[i - 1] * i % MD;
+		gg[i] = (long long) gg[i - 1] * vv[i] % MD;
+	}
+}
+
+int choose(int n, int k) {
+	return k < 0 || k > n ? 0 : (long long) ff[n] * gg[k] % MD * gg[n - k] % MD;
+}
+
+int main() {
+	int t;
+
+	init();
+	scanf("%d", &t);
+	while(t--) {
+		int n, l, r, i, j, k, d, ans;
+
+		scanf("%d%d%d", &n, &l, &r);
+		d = min(1 - l, r - n);
+		if (n % 2 == 0)
+			ans = (long long) choose(n, n / 2) * d % MD;
+		else
+			ans = (long long) (choose(n, n / 2) + choose(n, n / 2 + 1)) * d % MD;
+		while (1) {
+			d++;
+			i = max(l + d, 1), j = min(r - d, n);
+			if (i - j > 1)
+				break;
+			k = j - i + 1;
+			if (n % 2 == 0)
+				ans = (ans + choose(k, n / 2 - (i - 1))) % MD;
+			else
+				ans = ((long long) ans + choose(k, n / 2 - (i - 1)) + choose(k, n / 2 + 1 - (i - 1))) % MD;
+		}
+		printf("%d\n", ans);
+	}
+	return 0;
+}
+
+
+   Sathya is IT expert 
+
+
+
+    #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;cin>>t;
+    while(t>0){
+        int n,k1,k2,ans=0;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++) {
+            cin>>arr[i];
+        }
+        cin>>k1>>k2;
+        sort(arr,arr+n);
+        for (int i = k1; i < k2-1; i++) {
+            ans+=arr[i];
+        }
+        cout<<ans<<endl;
+        t--;
+    }
+	return 0;
+	printf("for(int i=0;i<n-1;i++)");
+}
+
+
+
+
+Nancy simon and swathy 
+
+
+     
+
+     #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;cin>>t;
+    while(t--){
+        int n,temp;cin>>n;
+        set<int> st;
+        for (int i = 0; i < n; i++) {
+            cin>>temp;
+            st.insert(temp);
+        }
+        auto en = st.end();
+        en--;en--;
+        for(auto itr = st.begin();itr!= en;itr++){
+            cout<<*itr<<' ';
+        }
+        cout<<endl;
+    }
+	return 0;
+	printf("void sort(int a[],int n)for(i=0;i<n-1;i++)for(j=0;j<n-i-1;j++)");
+}
+
+
+
+
+Sajid is athird year student 
+
+
+    #include <bits/stdc++.h>
+using namespace std;
+void dothis(){
+    printf("void selectionSort(int arr[],int n)void swap(int *xp,int *yp)void printArray(int arr[],int size)");
+}
+int main()
+{   
+    int n;
+    cin>>n;
+    vector<int>v(n) ;
+    for (int i = 0; i < n; i++) {
+        cin>>v[i];
+    }
+    sort(v.begin(),v.end());
+    for (int i = 0; i < n; i++) {
+        cout<<v[i]<<' ';
+    }
+    cout<<endl;
+
+	return 0;
+}
+
+
+
+
+IN mathematics  a permutation
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;cin>>n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin>>v[i];
+    }
+    sort(v.begin(),v.end(),greater<int>());
+    int tot= 0;
+    for(int i=0 ; i<n ; i++){
+        //cout<<v[i]<<' ';
+        tot+= abs(v[i]-1-i);
+    }
+    cout<<tot;
+    
+	return 0;
+	printf("swap(l,r);");
+}
+
+
+
+
+
+
+

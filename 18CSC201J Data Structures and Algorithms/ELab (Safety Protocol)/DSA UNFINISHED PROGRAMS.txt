@@ -1,0 +1,51 @@
+TREE!
+
+.
+.
+Darsh, Ratik, Swathy are good friends, They are studying Pre-final year B.E. in reputed institution. Swathy's uncle was a DS teacher in school of computing technologies. He asks to make an application for identifying postorder Traversal of the Tree
+.
+.
+.
+Your task is to determine for each node the maximum distance to another node.
+The sam is enjoying a wonderful vacation in Byteland. What makes the sam impressed the most is the road system of the country. Byteland has N cities numbered 1 through N. City 1 is the capital of Byteland. The country also has N-1 bidirectional roads connecting the cities. The i-th road connects two different cities ui and vi. In this road system, people can travel between every pair of different cities by going through exactly one path of roads.
+Each square of an 8×8 chessboard has a robot. Each robot independently moves k steps, and there can be many robots on the same square.
+A company has n employees, who form a tree hierarchy where each employee has a boss, except for the general director.
+
+TREE2
+
+.
+.
+.
+You are given an N-dimensional array A. You can execute an operation that removes the greatest and smallest elements from the array and replaces them with their difference. As a result, the array's size will drop by one after each operation. You are assigned Q jobs, each of which contains an integer K. After K operations, you must provide the total of all the items in the array for each task.
+There are n cities and m flight connections between them. A city is called a critical city if it appears on every route from a city to another city.
+.
+Given two rooted trees, your task is to find out if they are isomorphic, i.e., it is possible to draw them so that they look the same.
+.
+There are n cities and m flight connections between them. Your task is to add new flights so that it will be possible to travel from any city to any other city. What is the minimum number of new flights required?
+Malan, one of our programmers, is constructing a new home. He just purchased a rectangle property for this purpose. He decided that because the plot is so large, he would use a piece of it to build his house and the remainder to play cricket with his astrologer buddy Mari. But, because Malan is a superstitious man, he will not build his house on a random plot of land. He wants to maximize his good luck. For this, he took the help of Mari.
+
+GRAPH
+
+.
+A game has n planets, connected by m teleporters. Two planets a and b belong to the same kingdom exactly when there is a route both from a to b and from b to a. Your task is to determine for each planet its kingdom.
+.
+A game has n rooms and m tunnels between them. Each room has a certain number of coins. What is the maximum number of coins you can collect while moving through the tunnels when you can freely choose your starting and ending room?
+.
+.
+.
+.
+.
+.
+
+Hashing
+
+You are given an array of lengthN.You are required to count the number of (i,j)pairs where 1⩽i<j⩽N.such that the difference of the array elements on that indices is equal to the sum of the square of their indices.
+.
+Mathison has uncovered an ancient piece of paper on which are written N integers. This set of numbers will be referred to as A. Mathison learned in History class that a group of integers is unique if and only if their total is divisible by a mythological constant M.
+You are given an integer N denoting an N×N matrix.
+.
+.
+.
+Little Jhool regards Jaadu as one of his closest friends. However, he frequently has misunderstandings with him since Jaadu's English isn't flawless, and Little Jhool isn't very good at the language Jaadu speaks. So, he's in a pickle, and since he knows Jaadu possesses magical abilities, he begs him to assist him in resolving all of the difficulties that have arisen in their friendship.
+Anandi and Boby have known each other since they were children. However, as they grew older, Boby began to act strangely, which annoyed Anandi. Anandi was taking a break after coding a big programme when Boby appeared out of nowhere and switched some alphabet keys on her keyboard.
+.

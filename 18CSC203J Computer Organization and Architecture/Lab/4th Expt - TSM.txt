@@ -1,0 +1,48 @@
+ExNo:4     i) Program involving Arithmetic Instructions on 8 bit data- Addition 
+AIM: To implement assembly language program for addition of two 08-bit numbers.
+
+APPARTUS: TASM Software, P.C.
+
+PROGRAM:
+DATA SEGMENT
+A DB 09H
+B DB 02H
+C DW ?
+DATA ENDS
+ 
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START:
+MOV AX,DATA
+MOV DS,AX
+MOV AL,A
+MOV BL,B
+ADD AL,BL
+MOV C,AX
+INT 3
+CODE ENDS
+END START
+ExNo:4     ii) Program involving Arithmetic Instructions on 8 bit data- subtraction 
+AIM: To implement assembly language program for addition of two 08-bit numbers.
+
+APPARTUS: TASM Software, P.C.
+
+PROGRAM:
+DATA SEGMENT
+A DB 09H
+B DB 02H
+C DW ?
+DATA ENDS
+ 
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START:
+MOV AX,DATA
+MOV DS,AX
+MOV AL,A
+MOV BL,B
+SUB AL,BL
+MOV C,AX
+INT 3
+CODE ENDS
+END START

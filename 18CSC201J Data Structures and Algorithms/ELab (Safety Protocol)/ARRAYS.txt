@@ -1,0 +1,159 @@
+  
+    TINA HAS GIVEN A BOOLEAN MATRIX 
+
+
+       #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int r,c;
+    cin>>r>>c;
+    int arr[r][c];
+    int arrTemp[r][c];
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            cin>>arr[i][j];
+            arrTemp[i][j] = 0;
+        }
+    }
+    
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            if(arr[i][j]==1){
+                for(int i1 = 0;i1<r;i1++){
+                    arrTemp[i1][j] =1;
+                }
+                for(int i1 = 0;i1<c;i1++){
+                    arrTemp[i][i1] =1;
+                }
+            }
+        }
+    }
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            cout<<arrTemp[i][j];
+            if(j!=c-1)cout<<' '; 
+        }
+        cout<<endl;
+    }
+    
+
+	return 0;
+	printf("for(m=0;m<r;m++)");
+}
+
+
+  FROM SOME REASON YOUR SCHOOL FOOTBALL
+
+
+ #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int curr;
+    multiset<char> mp;
+    string names[] = {"","ONE","TWO","THREE","FOUR","FIVE","SIX","SEVEN","EIGHT","NINE","TEN","ELEVEN","TWELVE"};
+    while(cin>>curr){
+        if(curr==999){
+            cout<<"0999"<<'.'<<' ';
+            break;
+        }
+        cout<<curr<<' ';
+        if(curr>12)continue;
+        string now = names[curr];
+        for(auto ch:now){
+            mp.insert(ch);
+        }
+    }
+    for (auto ch : mp) {
+       cout<<ch<<' ';
+    }
+
+	return 0;
+	printf("char nums[13][256]for(n=0;n<26;n++)");
+}
+
+   
+
+
+   UMESH HAS N MIXTURES IN FRONT OF HIM
+  
+
+
+   #include<stdio.h>
+
+typedef long long unsigned LLU;
+
+LLU min_smoke[100][100];
+int color[100][100];
+
+LLU smoke(int n){
+    int i,j,l;
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            min_smoke[i][j]=10000000000000000;
+        }
+    }
+    
+    for(i=0;i<n;i++){
+        min_smoke[i][i] = 0;
+    }
+    
+    for(l=2;l<=n;l++){
+        int e = n-l;
+        for(i=0;i<=e;i++){
+            int k = i+l-1;
+            for(j=i;j<k;j++){
+                LLU sm = min_smoke[i][j] + min_smoke[j+1][k] + color[i][j]*color[j+1][k];
+                int cl = (color[i][j]+color[j+1][k])%100;
+                if(sm<min_smoke[i][k]){
+                    min_smoke[i][k] = sm;
+                    color[i][k] = cl;
+                }
+            }
+        }
+    }
+    
+
+    
+    return min_smoke[0][n-1];
+}
+
+int main(void){
+    int n;
+    while(scanf("%d",&n)!=EOF){
+        int i;
+        for(i=0;i<n;i++){
+            scanf("%d",&(color[i][i]));
+        }
+        printf("%llu\n",smoke(n));
+    }
+    return 0; 
+    printf("scount[100][100]colours[100]");
+}
+
+    PUBLIC SCHOOL HAS ARRANGED ON ANNUAL DAY FUNCTION
+
+
+
+    #include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;cin>>n;cout<<"1 \n";
+    for (int i = 0; i < n-2; i++) {
+        cout<<"1 ";
+        for (int j = 0; j < i; j++) {
+            cout<<"0 ";
+        }
+        cout<<"1 \n";
+    }
+    for (int i = 0; i < n; i++) {
+        cout<<"1 ";
+    }
+	return 0;
+	cout<<"for(i=1;i<=rows;i++)";
+}
+
+
+
