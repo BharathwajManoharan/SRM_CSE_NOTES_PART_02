@@ -1,0 +1,59 @@
+1.Create a program that asks the user to enter  their name and their age. 
+Print out a message addressed to them that tells them the year that they will turn 100 years old.
+
+2.Write a Python program which accepts the radius of a circle from the user 
+and compute the area. Sample Output : r = 1.1Area = 3.8013271108436504                
+
+3. Write a Python program which accepts the user's first and last name and 
+print them in reverse order with  a space between them
+  
+4. Write a Python program to get the volume of a sphere with radius
+
+ 
+5.Write a program that prompts the user to enter an integer for today’s day 
+of the week (Sunday is 0, Monday is 1, ..., and Saturday is 6). 
+Also prompt the user to enter the number of days after today for a future day 
+and display the future day of the week. 
+Write a program that prompts the user to enter three integers 
+and displays them in increasing order. (using if..elif structure)
+
+6) Print the following pattern
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5
+
+7) Reverse a given number and return true if it is the same as the original number
+
+8) Given a two list of ints create a third list such that should contain only odd numbers 
+from the first list and even numbers from the second list
+
+9) Return the number of times that the string “Emma” appears anywhere in the given string
+
+10.Write a program that reads an unspecified number of integers, determines how many positive 
+and negative values have been read, and computes the total and average of the input values 
+(not counting zeros). Your program ends with the input 0. 
+Display the average as a floating-point number. Here is a sample run:
+
+11.(Financial application: compute future tuition) Suppose that the tuition for a university 
+is $10,000 this year and increases 5% every year. 
+Write a program that computes the tuition in ten years and the total cost of four years’ 
+worth of tuition starting ten years from now.
+
+12.(Find the highest score) Write a program that prompts the user to enter the number of students
+ and each student’s score, and displays the highest score. Assume that the input is stored 
+in a file named score.txt, and the program obtains the input from the file. 
+
+13.(Find the two highest scores) Write a program that prompts the user to enter the number 
+of students and each student’s score, and displays the highest and secondhighest scores. 
+
+14.(Find numbers divisible by 5 and 6) Write a program that displays, ten numbers per line, 
+all the numbers from 100 to 1,000 that are divisible by 5 and 6. The numbers are separated by 
+exactly one space. (hint : use loop and lambda )
+
+15.Write a program that reads an integer and displays all its smallest factors, 
+also known as prime factors. For example, if the input integer is 120, the output 
+should be as follows: 2, 2, 2, 3, 5
+
+

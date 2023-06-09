@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+
+
+    string name1, name2;
+
+    int shortestString[31][31];
+    long uniqueString[31][31];
+
+   
+        cin >> name1 >> name2;
+
+
+        //Shift the characters of the name to right for ease of memoizing
+        name1.insert(0, "0");
+        name2.insert(0, "1");
+
+        //Prepare the matrices for memoization
+        for (int i = 0; i < 31; i++)
+            shortestString[0][i] = shortestString[i][0] = i, uniqueString[i][0] = uniqueString[0][i] = 1;
+
+        for (int i = 1; name1[i]; i++)
+        {
+            for (int j = 1; name2[j]; j++)
+            {
+                //Checking if we need to take the cumulative sum from upper-left block
+                if (name1[i] == name2[j])
+                {
+                    //Adding 1 to cumulative sum from upper-left block
+                    shortestString[i][j] = 1 + shortestString[i - 1][j - 1];
+
+                    //No need to add a new branch of unique strings so taking cumulative sum from upper-left block
+                    uniqueString[i][j] = uniqueString[i - 1][j - 1];
+
+                }
+                else
+                {
+                    //Finding the minimum from left and upper block and adding 1 to the value of current block
+                    shortestString[i][j] = 1 + min(shortestString[i][j - 1], shortestString[i - 1][j]);
+
+                    //Checking if there are two unique strings of the same length
+                    if (shortestString[i][j - 1] == shortestString[i - 1][j])
+                        uniqueString[i][j] = uniqueString[i][j - 1] + uniqueString[i - 1][j];
+
+                        //Checking if left block has the minimum value in shortestString matrix
+                    else if (shortestString[i][j - 1] < shortestString[i - 1][j])
+                        uniqueString[i][j] = uniqueString[i][j - 1];
+                    else
+                        uniqueString[i][j] = uniqueString[i - 1][j];
+                }
+            }
+        }
+        cout <<shortestString[name1.length() - 1][name2.length() - 1] << " " << uniqueString[name1.length() - 1][name2.length() - 1];
+    
+    return 0;
+    cout<<"cin>>name1>>name2;";
+}

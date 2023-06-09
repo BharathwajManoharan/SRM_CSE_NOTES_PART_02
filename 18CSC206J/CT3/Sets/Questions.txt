@@ -1,0 +1,32 @@
+SEPM : Questions to cover
+
+****SET A***
+
+1. How to perform verification and validation in software testing with suitable example.
+                     (or)
+2. Test project monitoring and control with neat sketch.
+
+3. Categorize the various types of software maintenance and explain its characteristics with example.
+                       (or)
+4. Steps for software product implementation with any sample example.
+
+5. (i) Test Automation
+    (ii) Defect Tracking
+                      (or)
+6. Software product release with example.
+
+***SET B***
+
+1. Test strategy and planning with neat diagram.
+                    (or)
+2. (i) Risk management
+   (ii) Test point analysis
+
+3. Software Maintenance lifecycle and its functions.
+                      (or)
+4. Product release management with suitable example.
+
+5. (i) Effort estimation and it's importance.
+    (ii) Software testing in iterative model.
+                         (or)
+6. Various types of maintenance models and  explain its characteristics with example.

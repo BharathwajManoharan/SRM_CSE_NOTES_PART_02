@@ -1,0 +1,47 @@
+CLI
+
+1)without password:
+
+No
+Router>en
+Router#config terminal
+Router-config#interface fa 0/0
+#ip address 10.10.10.2 255.0.0.0
+#no shut
+#exit
+#interface se 2/0
+#ip address 50.50.50.1 255.0.0.0
+#clock rate 64000
+#no shut
+#exit
+#router RIP
+#network 10.10.10.0
+#network 50.50.50.0
+#exit 
+#exit 
+
+2)with password:
+
+No
+Router>en
+Router#config terminal
+Router-config#interface fa 0/0
+#ip address 10.10.10.2 255.0.0.0
+#no shut
+#exit
+#interface se 2/0
+#ip address 50.50.50.1 255.0.0.0
+#clock rate 64000
+#no shut
+#exit
+#router RIP
+#network 10.10.10.0
+#network 50.50.50.0
+#exit 
+#line console 0
+#password ----------
+#login
+#exit
+#exit
+#exit
+

@@ -1,0 +1,332 @@
+1) Padmavati is a clever girl and she wants to participate in Olympiads this year. Of course she wants her partner to be clever too (although he's not)! Padmavati has prepared the following test problem for Sativathi , Divide and Conquer - Level 1
+
+#include <iostream>
+#include <map>
+using namespace std;
+const int N=1<<20;
+int n,a[N],c[N],w;
+void upd(int i,int c){
+    
+}
+int main(){
+  cin>>n;
+  for(int i=0;i<n;++i)cin>>a[i];
+  map<int,int>u,v;
+  for(int i=n;i-->0;){
+    int x=++u[a[i]];
+    while(x<N)++c[x],x+=x&-x;
+  }
+  
+  for(int i=0;i<n;++i){
+    int x=u[a[i]]--,y=v[a[i]]++;
+    while(x<N)--c[x],x+=x&-x;
+    while(y>0)w+=c[y],y-=y&-y;
+  }
+  cout<<w<<endl;
+}
+
+2)Programmer Sandhosh and you have a New Year Tree (not the traditional fur tree, though)  , Divide and Conquer -Level 1
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N=1e6+10;
+ 
+int m,cnt=4,La=2,Lb=3,len=2;
+int f[N][21],dep[N];
+ 
+int lca(int x,int y) {
+    if(dep[x]<dep[y]) swap(x,y);
+    for(int i=20;i>=0;i--) if(dep[f[x][i]]>=dep[y]) x=f[x][i];
+    if(x==y) return x;
+    for(int i=20;i>=0;i--) if(f[x][i]!=f[y][i]) x=f[x][i],y=f[y][i];
+    return f[x][0];
+}
+ 
+int dis(int x,int y){
+    return dep[x]+dep[y]-dep[lca(x,y)]*2;
+}
+ 
+int main() {
+    scanf("%d",&m);
+    dep[1]=1;
+    dep[2]=dep[3]=dep[4]=2;
+    f[2][0]=f[3][0]=f[4][0]=1;
+    int u;
+    while(m--) {
+    cin>>u;
+        int x=cnt+1,y=cnt+2;
+        cnt+=2;
+        f[x][0]=f[y][0]=u;
+        for(int i=1; i<=20; i++) f[x][i]=f[y][i]=f[f[x][i-1]][i-1];
+        dep[x]=dep[y]=dep[u]+1;
+        int d1=dis(La,x);
+        int d2=dis(Lb,x);
+        if(len<d1) len=d1,Lb=x;
+        if(len<d2) len=d2,La=x;
+        printf("%d\n",len);
+    }
+    return 0;
+}
+
+3)Leopard is in the Amusement Park. And now she is in a queue in front of the Ferris wheel , Divide and Conquer - Level 1
+
+#include<cstdio>
+#include<iostream>
+using namespace std;
+inline int getint(){
+char c;
+while((c=getchar())<'0'||c>'9');return c-'0';
+}
+const int N=4005,inf=.5e9;
+int n,k,sum[N][N],f[N],g[N];
+int main(){
+cin>>n>>k;
+for(int i=1;i<=n;i++)
+for(int j=1;j<=n;j++)
+sum[i][j]=sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+getint();
+g[n+1]=n;
+for(int kk=2;kk<=k;kk++)
+for(int i=n;i;i--){
+f[i]=-inf;
+for(int j=g[i];j<=g[i+1]&&j<i;j++){
+int now=f[j]-sum[j][j]+sum[j][i];
+if(now>f[i]){
+f[i]=now;
+g[i]=j;
+}
+}
+}
+printf("%d\n",sum[n][n]/2-f[n]);
+}
+
+4)Lakshman and Sukran are the best competitive programmers in their town. However, they can't both qualify to an important contest. The selection will be made with the help of a single problem. Bhoominath, a friend of Lakshman, managed to get hold of the problem before the contest. Because he wants to make sure Lakshman will be the one qualified, he tells Lakshman the following task , Divide and Conquer - Level 1
+
+#include <bits/stdc++.h>
+using namespace std;
+long long n, i = 1, j, k = 9e9, x, s[100001], d;
+ 
+int main() {
+    cin>>n;
+    for (; i <= n; i++){ cin>>x;s[i] = s[i - 1] + x;}
+    for (i = 1; i <= n; i++)
+        for (j = max(1ll, i - 20000); j <= i; j++)
+            if (i != j) k = min(k, (i - j) * (i - j) + (s[i] - s[j]) * (s[i] - s[j]));
+    cout << k;
+}
+
+5)Maakesh caught the trail of the ancient Book of Evil in a swampy area , Divide and Conquer - Level 1
+
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 100005;
+int R,D,n,m,d,h[N];
+vector<int> adj[N];
+bool prob[N],is[N];
+void evil(int u,int p=0){
+    h[u]= h[p]+1;
+    prob[u] &= (h[u]<=d);
+    if(is[u]&&h[u]>D) 
+        D=h[u],R=u;
+    for(unsigned int i=0;i<adj[u].size();++i){
+        int v= adj[u][i];
+        if(v!=p)
+            evil(v,u);
+    }
+}
+int main(){
+    cin>>n>>m>>d;memset(prob,true,sizeof(prob));
+    h[0]=-1;int a,b,i;D=0;
+    for(i=0;i<m;++i)
+        cin>>R,is[R]=true;
+    for(i=0;i<n-1;++i)
+        scanf("%d%d",&a,&b),adj[a].push_back(b),adj[b].push_back(a);
+    evil(R);evil(R);evil(R);
+    int ret=0;
+    for(i=1;i<=n;++i)
+        if(prob[i])++ret;
+    cout<<ret<<endl;
+}
+
+6)A set of points on a plane is called fair, if for any two points at least one of the three conditions is true , Divide & Conquer - Level 1
+
+#include<bits/stdc++.h>
+using namespace std;
+
+pair<int,int>p[10010];
+set<pair<int,int> >s;
+
+void dfs(int l,int r)
+{
+    if(l==r)
+    {
+        s.insert(p[l]);
+        return;
+    }
+    int i,mid=(l+r)/2;
+    dfs(l,mid);
+    dfs(mid+1,r);
+    for(i=l;i<=r;i++) s.emplace(p[mid].first,p[i].second);
+}
+
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++) scanf("%d%d",&p[i].first,&p[i].second);
+    sort(p+1,p+n+1);
+    dfs(1,n);
+    printf("%ld\n",s.size());
+    for(auto it:s) printf("%d %d\n",it.first,it.second);
+    return 0;
+    printf("void fiv(int l,int r),cin>>n;cin>>a[i].first>>a[i].second;");
+}
+
+7)Recently Aarush has become keen on physics. Anna V., his teacher noticed Aarush's interest and gave him a fascinating physical puzzle a half-decay tree , Divide and Conquer - Level 1
+
+#include<bits/stdc++.h>
+using namespace std;
+int h,q,v,e;string str;map<int,int> f;
+double puzzle(int u,int mx) {return (f[u]<=mx)?mx:(0.5*(puzzle(u<<1,max(mx,f[u]-f[u<<1]))+puzzle(u<<1|1,max(mx,f[u]-f[u<<1|1]))));}
+int main(){
+cin>>h>>q;
+    while (q--){
+        cin>>str;
+        if (str[0]=='a'){
+            scanf("%d %d",&v,&e);
+            while (v) f[v]+=e,v>>=1;
+        }
+        else printf("%.2lf\n",puzzle(1,0));
+    }
+    return 0;
+}
+
+8)In this problem you will meet the simplified model of game Pudding Monsters , Divide and Conquer - Level 1
+
+#include <bits/stdc++.h>
+#define fi first
+#define se second
+#define lo long long 
+#define inf 1000000009
+#define md 1000000007
+#define li 300005
+#define mp make_pair
+#define pb push_back
+using namespace std;
+int n,x,y,v[li],a[li],b[li],mn[li],mx[li],g[li];
+lo int ans;
+void work(int *a,int *b)
+{
+    int n=a[0],m=b[0];
+    mn[m+1]=0;
+    for(int i=1;i<=m;i++){
+        mn[i]=min(mn[i-1],b[i]);
+        mx[i]=max(mx[i-1],b[i]);
+    }
+    int mna=inf,mxa=0;
+    int l=1,r=1;
+    for(int i=1;i<=n;i++){
+        mna=min(mna,a[i]);
+        mxa=max(mxa,a[i]);
+        int d=mxa-mna+1-i;
+        if(d>0 && d<=m && mn[d]>mna && mx[d]<mxa) ans++;
+        for( ;mn[r]>mna;r++) g[mx[r]-r]++;
+        for( ;l<r&&mx[l]<mxa;l++) g[mx[l]-l]--;
+        ans+=g[mna+i-1];
+    }
+    for(int i=l;i<r;i++) g[mx[i]-i]=0;
+}
+void solve(int l,int r){
+    if(l==r) return ;
+    int mid=(l+r)/2;
+    a[0]=mid-l+1;b[0]=r-mid;
+    for(int i=l;i<=mid;i++) a[mid+1-i]=v[i];
+    for(int i=mid+1;i<=r;i++) b[i-mid]=v[i];
+    work(a,b),work(b,a);
+    solve(l,mid);solve(mid+1,r);
+}
+int main(){
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>x>>y;
+        v[x]=y;
+    }
+    mn[0]=inf;
+    solve(1,n);
+    printf("%lld\n",ans+n);
+    return 0;
+    
+}
+
+9)Fazil is an unemployed computer scientist who spends his days working at odd-jobs. Divide & Conquer - Level 1
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string word;
+long long dp[100][100];
+
+long long calculate(int s, int e){
+
+    if(s > e) 
+        return 0;
+
+    if(s == e ) 
+        return 1;
+
+    if(dp[s][e] != -1) 
+        return dp[s][e];
+
+    if(word[s] == word[e]) 
+        return dp[s][e] = 1 +  calculate(s+1, e) + calculate(s, e-1);
+    else 
+        return dp[s][e] = calculate(s+1, e) + calculate(s, e-1) - calculate(s+1, e-1);
+
+}
+
+int main(){
+    
+        cin>>word;
+
+        memset(dp, -1, sizeof dp);
+
+        cout<<calculate(0,word.size()-1)<<endl;
+    return 0;
+    printf("long long calculate(int s,int e)");
+}
+
+10)Now Sabanayagam becomes a commander of Ladakh. Ladakh, like its name said, Divide & Conquer - Level 1
+
+#include<bits/stdc++.h>
+using namespace std;
+#define N 100005
+ 
+int cnt[26][100005];
+char ans[N];
+vector<int> g[N];
+void man(){
+    cout<<"void dfs(int u,int par) cin>>n; cin>>u>>v;";
+}
+void dfs(int s,int f){
+    for(auto x:g[s])if(x!=f)dfs(x,s);
+    int p;
+    for(int i=0;i<26&&cnt[i][s]<2;i++)
+        if(!cnt[i][s])p=i;
+    cnt[p][s]++;
+    ans[s]='A'+p;
+    for(int i=0;i<=p;i++)cnt[i][f]+=cnt[i][s];
+    return ;
+}
+ 
+int main(){
+    int n,i,a,b;
+    scanf("%d",&n);
+    for(i=1;i<n;i++){
+        scanf("%d %d",&a,&b);
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+    dfs(1,0);
+    for(i=1;i<=n;i++)printf("%c ",ans[i]);
+    return 0;
+}
