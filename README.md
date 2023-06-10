@@ -40,6 +40,7 @@ Let's work together to make this repository a valuable resource for all second-y
 ## Need Assistance with Downloading Files?
 
 If you encounter any difficulties while downloading files from this repository, I have provided an alternative download link for your convenience. 
+
 You can access the notes and resources from the following location: [Download Link](https://mega.nz/folder/wfIBhJ7C#3Vg-M5jqWmF8VH5ajlF3CQ).
 
 Please note that the provided link will direct you to an external file hosting service, where you can easily download the files you need. If you still have any issues or questions, feel free to reach out to us via the provided contact information.
